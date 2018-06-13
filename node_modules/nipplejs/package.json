@@ -1,0 +1,84 @@
+{
+  "_from": "nipplejs",
+  "_id": "nipplejs@0.7.1",
+  "_inBundle": false,
+  "_integrity": "sha512-dGKY8QIdXAlCIucVdXG3vqQLtzwcRo7NviDSuzhVmYLe/INd57MgsyYfU2kLqGQa9UqgJxaXcQptSfo4TjGM6Q==",
+  "_location": "/nipplejs",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "nipplejs",
+    "name": "nipplejs",
+    "escapedName": "nipplejs",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nipplejs/-/nipplejs-0.7.1.tgz",
+  "_shasum": "43de3f154a9d5c662acd91d13b347369b1bc88bc",
+  "_spec": "nipplejs",
+  "_where": "/Users/zhangfu/Learn/test",
+  "author": {
+    "name": "Yoann Moinet",
+    "email": "yoann.moinet@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/yoannmoinet/nipplejs/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "A virtual joystick for touch capable interfaces",
+  "devDependencies": {
+    "casperjs": "^1.1.3",
+    "concat-cli": "^4.0.0",
+    "conventional-changelog": "^1.1.0",
+    "eslint": "^3.1.0",
+    "expect.js": "^0.3.1",
+    "jscs": "^3.0.7",
+    "markdown-toc": "^0.12.16",
+    "mocha": "^3.0.2",
+    "node-static": "^0.7.8",
+    "phantomjs-prebuilt": "^2.1.12",
+    "uglify-js": "^2.7.3",
+    "umd": "^3.0.1",
+    "watch": "^0.19.2"
+  },
+  "homepage": "https://github.com/yoannmoinet/nipplejs",
+  "license": "MIT",
+  "main": "./dist/nipplejs.js",
+  "name": "nipplejs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoannmoinet/nipplejs.git"
+  },
+  "scripts": {
+    "bowerSync": "node ./bin/bowerSync.js",
+    "build": "npm run buildWatch && npm run uglify",
+    "buildWatch": "npm run concat && npm run umd",
+    "changelog": "node ./bin/changelog.js",
+    "clean": "node ./bin/clean.js",
+    "concat": "concat-cli -f ./src/start.js ./src/utils.js ./src/super.js ./src/nipple.js ./src/collection.js ./src/manager.js ./src/end.js -o ./nipplejs.temp.js",
+    "copyGh": "node ./bin/copyToGhPages.js",
+    "copyToTest": "node ./bin/copyToTest.js",
+    "format": "jscs ./src/start.js ./src/utils.js ./src/super.js ./src/manager.js ./src/nipple.js ./test/nipplejs.casper.js",
+    "formatAndLint": "npm run format && npm run lint",
+    "lint": "eslint ./src/start.js ./src/utils.js ./src/super.js ./src/manager.js ./src/nipple.js ./src/end.js ./test/nipplejs.casper.js",
+    "postbuildWatch": "npm run clean && npm run copyToTest",
+    "postversion": "npm run bowerSync && npm run changelog",
+    "prebuild": "npm run formatAndLint",
+    "pretest": "npm run build",
+    "start": "static test",
+    "test": "casperjs test ./test/nipplejs.casper.js",
+    "toc": "markdown-toc -i README.md",
+    "uglify": "uglifyjs ./dist/nipplejs.js -o ./dist/nipplejs.min.js -c -m",
+    "umd": "umd nipplejs ./nipplejs.temp.js ./dist/nipplejs.js",
+    "watch": "watch \"npm run buildWatch\" src"
+  },
+  "version": "0.7.1"
+}

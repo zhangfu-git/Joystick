@@ -1,0 +1,51 @@
+.front {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+}
+
+.back {
+  background-image: url('./j.png');
+  background-size: cover;
+}
+.box {
+  display: flex;
+  width: 100%;
+  background-color: #999;
+}
+#left {
+  position: relative;
+  width: 50%;
+  height: 600px;
+  background-color: #ccc;
+}
+#right {
+  position: relative;
+  width: 50%;
+  height: 600px;
+  background-color: #eee;
+}
+
+/* 黑球 */
+.dot {
+  background-color: #000;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  bottom: 50%;
+  z-index: 10;
+}
+/* 地面 */
+.ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background-color: burlywood;
+  z-index: 9;
+}
